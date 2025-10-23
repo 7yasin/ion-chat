@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/whatsapp.png" alt="WhatsApp Logo" class="logo" />
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content>
+    <div class="card-container">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Register</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+            <ion-item>
+              <ion-input
+                label="Username (No Spaces Allowed)"
+                label-placement="floating"
+                fill="clear"
+                placeholder="This field is required."
+                [(ngModel)]="username"
+                name="username"
+                [pattern]="'^[^\\s]+$'"
+                required
+              >
+              </ion-input>
+            </ion-item>
+            <ion-text
+              color="danger"
+              *ngIf="form.submitted && form.controls['username']?.invalid"
+            >
+              Username is required and cannot contain spaces.
+            </ion-text>
+            <br />
+
+            <ion-item>
+              <ion-input
+                label="Email Address"
+                label-placement="floating"
+                fill="clear"
+                placeholder="This field is required."
+                [(ngModel)]="email"
+                [pattern]="emailPattern"
+                name="email"
+                required
+              >
+              </ion-input>
+            </ion-item>
+            <ion-text
+              color="danger"
+              *ngIf="form.submitted && form.controls['email']?.invalid"
+            >
+              A valid email address is required.
+            </ion-text>
+            <br />
+
+            <ion-item>
+              <ion-input
+                label="Password (Min 7 Characters)"
+                label-placement="floating"
+                fill="clear"
+                placeholder="This field is required."
+                [(ngModel)]="password"
+                name="password"
+                type="password"
+                class="password"
+                [pattern]="'^[^\\s]+$'"
+                minlength="7"
+                required
+              >
+              </ion-input>
+            </ion-item>
+            <ion-text
+              color="danger"
+              *ngIf="form.submitted && form.controls['password']?.invalid"
+            >
+              Password is required and must be at least 7 characters without
+              spaces.
+            </ion-text>
+            <br />
+
+            <ion-button
+              expand="block"
+              fill="outline"
+              color="success"
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              Register
+            </ion-button>
+
+            <ion-text align="center" class="centered-text">
+              Or &nbsp;<a style="color: green" routerLink="/login">Login</a>
+            </ion-text>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
+</ion-content>
