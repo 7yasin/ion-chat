@@ -11,34 +11,32 @@ This project is intended as a lightweight example for developers who want to lea
 ## Screenshots
 
 <div align="center">
-<div align="center">
   <table>
     <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/7yasin/ion-chat/blob/main/readme-assets/blackTheme.png" width="200"/><br/>
+      <td align="center" style="padding:10px;">
+        <img src="readme-assets/blackTheme.png" width="200"/><br/>
         <sub><strong>Dark Theme</strong></sub>
       </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/7yasin/ion-chat/blob/main/readme-assets/whiteTheme.png" width="200"/><br/>
+      <td align="center" style="padding:10px;">
+        <img src="readme-assets/whiteTheme.png" width="200"/><br/>
         <sub><strong>Light Theme</strong></sub>
       </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/7yasin/ion-chat/blob/main/readme-assets/loginPage.png" width="200"/><br/>
+      <td align="center" style="padding:10px;">
+        <img src="readme-assets/loginPage.png" width="200"/><br/>
         <sub><strong>Login Page</strong></sub>
       </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/7yasin/ion-chat/blob/main/readme-assets/registerPage.png" width="200"/><br/>
+      <td align="center" style="padding:10px;">
+        <img src="readme-assets/registerPage.png" width="200"/><br/>
         <sub><strong>Register Page</strong></sub>
       </td>
-      <td align="center" style="padding: 10px;">
-        <img src="https://github.com/7yasin/ion-chat/blob/main/readme-assets/userChats.png" width="200"/><br/>
+      <td align="center" style="padding:10px;">
+        <img src="readme-assets/userChats.png" width="200"/><br/>
         <sub><strong>User Chats</strong></sub>
       </td>
     </tr>
   </table>
 </div>
 
-</div>
 
 ---
 
@@ -133,11 +131,11 @@ src/
 
 ## Database Architecture (Firebase Realtime DB)
 
-| Node        | Purpose                     | Structure (Key Fields)                              |
-|------------|-----------------------------|-----------------------------------------------------|
-| **users**  | Stores registered users     | `userId → { username, email, password }`           |
-| **chats**  | Chat sessions between users | `chatId (userA_userB) → { createdAt, messageKey: { message, sender, timestamp } }` |
-| **messages** | Global message log (optional) | `messageKey → { message, sender, receiver, timestamp }` |
+| Node       | Purpose                      | Structure (Key Fields)                                                                 |
+|------------|------------------------------|-----------------------------------------------------------------------------------------|
+| users      | Stores registered users      | `userId → { username, email, password }`                                                |
+| chats      | Chat sessions between users  | `chatId (userA_userB) → { createdAt, messageKey: { message, sender, timestamp } }`     |
+| messages   | Global message log (optional)| `messageKey → { message, sender, receiver, timestamp }`                                 |
 
 ---
 
